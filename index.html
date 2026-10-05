@@ -13,15 +13,18 @@
     <meta property="og:url" content="https://endryusschmidel.github.io/conde-porto-alegre/" />
     <meta property="og:title" content="Clínica Conde de Porto Alegre — desde 1999 em Duque de Caxias" />
     <meta property="og:description" content="Todas as especialidades num só lugar, particular e convênios. Agende sua avaliação pelo WhatsApp." />
-    <meta property="og:image" content="https://endryusschmidel.github.io/conde-porto-alegre/assets/og-conde-porto-alegre.jpg" />
+    <meta property="og:image" content="https://endryusschmidel.github.io/conde-porto-alegre/assets/og-conde-porto-alegre.jpg?v=2" />
+    <meta property="og:image:alt" content="Recepção da Clínica Dentária Conde de Porto Alegre" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=3" />
     <script src="script.js?v=2" defer></script>
   </head>
   <body>
@@ -33,9 +36,7 @@
 
     <header class="site-header" id="topo">
       <a class="brand" href="#topo" aria-label="Clínica Conde de Porto Alegre, início">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 40 40"><path d="M20 6c-5 0-8.5 1.6-11 1.6C6.3 7.6 4 9.6 4 14c0 5.5 2.6 8.5 3.8 13.4C9 32.6 10 36 12.6 36c3.2 0 3-8.6 7.4-8.6s4.2 8.6 7.4 8.6c2.6 0 3.6-3.4 4.8-8.6C33.4 22.5 36 19.5 36 14c0-4.4-2.3-6.4-5-6.4-2.5 0-6-1.6-11-1.6Z" /></svg>
-        </span>
+        <img class="brand-mark" src="assets/logo.jpg" alt="" width="40" height="40" />
         <span class="brand-name">Conde de Porto Alegre<small>Clínica Dentária · desde 1999</small></span>
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
@@ -65,10 +66,7 @@
           </ul>
         </div>
         <div class="hero-visual" data-reveal style="--d: .1s">
-          <div class="photo-slot photo-tall" data-slot="hero">
-            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6c-5 0-8.5 1.6-11 1.6C6.3 7.6 4 9.6 4 14c0 5.5 2.6 8.5 3.8 13.4C9 32.6 10 36 12.6 36c3.2 0 3-8.6 7.4-8.6s4.2 8.6 7.4 8.6c2.6 0 3.6-3.4 4.8-8.6C33.4 22.5 36 19.5 36 14c0-4.4-2.3-6.4-5-6.4-2.5 0-6-1.6-11-1.6Z" /></svg>
-            <span>Foto da equipe ou da recepção</span>
-          </div>
+          <div class="photo-slot photo-tall"><img src="assets/hall.png" alt="Recepção da Clínica Conde de Porto Alegre" width="645" height="822" /></div>
           <div class="hero-card">
             <span class="hero-card-icon" aria-hidden="true">✓</span>
             <p><strong>Em frente à Oi, no 25 de Agosto</strong>Rua Conde de Porto Alegre, 548</p>
@@ -175,16 +173,11 @@
           <p class="eyebrow">Resultados</p>
           <h2 id="results-title">Arraste e veja<br /><em>a diferença.</em></h2>
           <p>Casos da clínica, publicados com autorização dos pacientes. Cada sorriso é planejado individualmente — os resultados variam de pessoa para pessoa.</p>
-          <div class="case-tabs" role="tablist" aria-label="Casos">
-            <button type="button" class="case-tab is-active" data-case="Prótese sobre implante">Implante</button>
-            <button type="button" class="case-tab" data-case="Clareamento">Clareamento</button>
-            <button type="button" class="case-tab" data-case="Alinhadores">Alinhadores</button>
-          </div>
         </div>
         <div class="compare" data-reveal style="--d: .1s">
           <div class="compare-frame" id="compare" style="--pos: 50%">
-            <div class="compare-side compare-after photo-slot" data-slot="depois"><span>Depois</span></div>
-            <div class="compare-side compare-before photo-slot" data-slot="antes"><span>Antes</span></div>
+            <div class="compare-side compare-after photo-slot"><img src="assets/depois.jpg" alt="Sorriso depois do tratamento" /><span>Depois</span></div>
+            <div class="compare-side compare-before photo-slot"><img src="assets/antes.jpg" alt="Sorriso antes do tratamento" /><span>Antes</span></div>
             <div class="compare-handle" aria-hidden="true"><span>⇆</span></div>
             <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois" id="compare-range" />
           </div>
