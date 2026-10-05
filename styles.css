@@ -208,6 +208,9 @@ html.has-reveal [data-reveal].is-in { opacity: 1; transform: none; }
 .phones-more a { color: var(--deep); font-weight: 600; }
 .phone { margin-top: 22px; display: inline-block; font-family: var(--serif); font-size: 26px; color: var(--deep); }
 
+.contact-map { grid-column: 1 / -1; height: 380px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--mint-soft); }
+.contact-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
 /* Rodapé */
 .site-footer { padding: 46px 8vw 28px; color: #cfe3dd; background: var(--ink); }
 .site-footer .brand-name { color: var(--white); }
@@ -219,8 +222,9 @@ html.has-reveal [data-reveal].is-in { opacity: 1; transform: none; }
 .footer-bottom a { color: var(--champagne); text-decoration: underline; text-underline-offset: 3px; }
 
 /* Botão flutuante */
-.whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 30; height: 52px; padding: 0 20px; display: flex; align-items: center; gap: 9px; border-radius: 999px; color: var(--white); background: #1fa855; box-shadow: 0 12px 30px rgba(0, 0, 0, .22); font-size: 14px; font-weight: 700; transition: opacity .2s, transform .2s; }
-.whatsapp-float svg { width: 20px; fill: currentColor; }
+.whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 30; height: 52px; padding: 0 20px; display: flex; align-items: center; gap: 9px; border-radius: 999px; color: var(--white); background: var(--deep); box-shadow: 0 12px 30px rgba(14, 58, 54, .35); font-size: 14px; font-weight: 700; transition: opacity .2s, transform .2s; }
+.whatsapp-float:hover { background: var(--deep-2); }
+.whatsapp-float svg { width: 22px; fill: currentColor; }
 .whatsapp-float.is-hidden { opacity: 0; pointer-events: none; transform: translateY(14px); }
 
 /* Tablet */
@@ -260,6 +264,7 @@ html.has-reveal [data-reveal].is-in { opacity: 1; transform: none; }
   .treat-card h3 { margin-top: 16px; }
   .booking-card { padding: 22px 18px; border-radius: 22px; }
   .contact-card { padding: 28px 22px; }
+  .contact-map { height: 300px; }
   .footer-top { flex-direction: column; align-items: flex-start; gap: 14px; }
   .whatsapp-float { right: 14px; bottom: 14px; }
 }
