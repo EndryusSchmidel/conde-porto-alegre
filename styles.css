@@ -105,8 +105,18 @@ html.has-reveal [data-reveal].is-in { opacity: 1; transform: none; }
 /* Convênios */
 .convenios { padding-top: 20px; }
 .section-lead { margin: 18px 0 0; color: var(--muted); }
-.conv-list { margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; list-style: none; }
-.conv-list li { padding: 12px 20px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); font-size: 15px; font-weight: 600; }
+.conv-viewport { margin: 0 -8vw; overflow: hidden; }
+.conv-track { display: flex; }
+.conv-list { margin: 0; padding: 0 8vw; display: flex; flex-wrap: wrap; gap: 10px; list-style: none; }
+.conv-list li { flex: none; padding: 12px 20px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); font-size: 15px; font-weight: 600; white-space: nowrap; }
+.conv-list[aria-hidden="true"] { display: none; }
+/* Carrossel infinito: a lista é duplicada pelo script e desliza metade da trilha */
+.conv-viewport.is-looping { -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.is-looping .conv-track { width: max-content; animation: conv-marquee 40s linear infinite; }
+.is-looping .conv-list { flex: none; flex-wrap: nowrap; padding: 0 10px 0 0; }
+.is-looping .conv-list[aria-hidden="true"] { display: flex; }
+.is-looping:hover .conv-track { animation-play-state: paused; }
+@keyframes conv-marquee { to { transform: translateX(-50%); } }
 
 /* Primeira consulta */
 .first-visit { background: var(--white); }
@@ -243,6 +253,8 @@ html.has-reveal [data-reveal].is-in { opacity: 1; transform: none; }
   .pains { padding: 26px 20px; gap: 6px 22px; }
   .pains p { font-size: 17px; }
   .treat-grid, .treat-grid-4, .testi-grid, .steps, .contact { grid-template-columns: 1fr; }
+  .conv-viewport { margin: 0 -20px; }
+  .conv-list { padding: 0 20px; }
   .conv-list li { padding: 10px 15px; font-size: 14px; }
   .treat-card { min-height: 0; padding: 26px; }
   .treat-card h3 { margin-top: 16px; }
@@ -254,5 +266,6 @@ html.has-reveal [data-reveal].is-in { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .is-looping .conv-track { animation: none; }
   html.has-reveal [data-reveal] { opacity: 1; transform: none; transition: none; }
 }

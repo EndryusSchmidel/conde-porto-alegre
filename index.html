@@ -21,8 +21,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=1" />
-    <script src="script.js?v=1" defer></script>
+    <link rel="stylesheet" href="styles.css?v=2" />
+    <script src="script.js?v=2" defer></script>
   </head>
   <body>
     <div class="announcement">
@@ -146,11 +146,15 @@
           <h2 id="conv-title">Atendemos particular<br /><em>e pelo seu convênio.</em></h2>
           <p class="section-lead">Não encontrou o seu na lista? Fale com a recepção — atendemos outros planos também.</p>
         </div>
-        <ul class="conv-list" data-reveal>
+        <div class="conv-viewport" id="conv-viewport" data-reveal>
+          <div class="conv-track" id="conv-track">
+            <ul class="conv-list" role="list">
           <li>Amil Dental</li><li>Unimed Odonto</li><li>Bradesco Saúde</li><li>MetLife</li><li>OdontoPrev</li>
           <li>Porto Seguro Dental</li><li>Plena</li><li>Assist Card</li><li>Mediservice</li><li>InterOdonto</li>
           <li>Inter Partner</li><li>Odonto Empresa</li><li>LIS Dental</li><li>APPAI</li><li>GEAP Dental</li><li>Capesesp</li>
-        </ul>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section class="section first-visit" id="primeira-consulta" aria-labelledby="visit-title">

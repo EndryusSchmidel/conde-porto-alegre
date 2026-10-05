@@ -154,3 +154,26 @@ document.querySelectorAll('.faq-list details').forEach((details) => {
     }
   });
 });
+
+// Convênios: duplica a lista para o carrossel dar loop sem emenda
+const convTrack = document.querySelector('#conv-track');
+const convViewport = document.querySelector('#conv-viewport');
+if (convTrack && convViewport && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const list = convTrack.firstElementChild;
+  const originals = [...list.children];
+  convViewport.classList.add('is-looping');
+  // repete os itens até uma cópia cobrir a tela inteira (inclusive janela maximizada depois)
+  const target = Math.max(convViewport.clientWidth, window.screen ? screen.width : 0);
+  for (let i = 0; i < 20 && list.scrollWidth < target; i += 1) {
+    originals.forEach((item) => {
+      const copy = item.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      list.appendChild(copy);
+    });
+  }
+  const clone = list.cloneNode(true);
+  clone.setAttribute('aria-hidden', 'true');
+  convTrack.appendChild(clone);
+  // velocidade constante (~40px/s), independente de quantos convênios
+  convTrack.style.animationDuration = `${Math.round(list.scrollWidth / 40)}s`;
+}
