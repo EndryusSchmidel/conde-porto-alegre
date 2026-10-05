@@ -67,15 +67,15 @@ const state = { treatment: 'Check-up e limpeza', plan: 'Particular', day: 'O qua
 const planName = document.querySelector('#plan-name');
 
 const buildMessage = () => {
-  const lines = [`Olá! Gostaria de agendar uma avaliação na ${CLINIC.name} 🦷`];
-  lines.push(state.treatment ? `✨ Interesse: ${state.treatment}` : '✨ Ainda não sei qual tratamento');
+  const lines = [`Olá! Gostaria de agendar uma avaliação na ${CLINIC.name}.`];
+  lines.push(state.treatment ? `Interesse: ${state.treatment}.` : 'Ainda não sei qual tratamento.');
   const plan = state.plan === 'Convênio' ? `pelo convênio${planName.value.trim() ? ` ${planName.value.trim()}` : ''}` : 'particular';
-  lines.push(`💳 Atendimento ${plan}`);
-  lines.push(`📅 ${state.day}, de ${state.period}`);
-  if (firstVisit.checked) lines.push('👋 É minha primeira consulta');
-  if (anxious.checked) lines.push('💬 Tenho receio de dentista — prefiro um atendimento com calma');
+  lines.push(`Atendimento ${plan}.`);
+  lines.push(`Quando: ${state.day}, de ${state.period}.`);
+  if (firstVisit.checked) lines.push('É minha primeira consulta.');
+  if (anxious.checked) lines.push('Tenho receio de dentista — prefiro um atendimento com calma.');
   const name = nameInput.value.trim();
-  if (name) lines.push(`Nome: ${name}`);
+  if (name) lines.push(`Nome: ${name}.`);
   return lines.join('\n');
 };
 const render = () => { preview.textContent = buildMessage(); };
@@ -106,7 +106,7 @@ document.querySelectorAll('[data-treatment]').forEach((button) => {
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  window.open(`https://wa.me/${CLINIC.whatsapp}?text=${encodeURIComponent(buildMessage())}`, '_blank', 'noopener');
+  window.open(`https://api.whatsapp.com/send?phone=${CLINIC.whatsapp}&text=${encodeURIComponent(buildMessage())}`, '_blank', 'noopener');
 });
 render();
 
